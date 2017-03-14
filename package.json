@@ -1,0 +1,30 @@
+{
+  "name": "auto-bem-mask",
+  "description": "Auto Scope CSS using BEM methodology",
+  "version": "0.1.9",
+  "author": "Alexander Kit <alex.kit@atmajs.com>",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/tenbits/autoBem-mask.git"
+  },
+  "bugs": {
+    "url": "https://github.com/tenbits/autoBem-mask/issues"
+  },
+  "licenses": [
+    "MIT"
+  ],
+  "main": "lib/autoBem-mask.js",
+  "devDependencies": {
+    "atma": ">0.9.26",
+    "auto-bem": "^0.1.10"
+  },
+  "scripts": {
+    "test": "atma test",
+    "build": "atma",
+    "release": "atma release"
+  },
+  "keywords": [],
+  "dependencies": {
+    "maskjs": ">=0.61.5"
+  }
+}
