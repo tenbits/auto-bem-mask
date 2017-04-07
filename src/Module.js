@@ -1,13 +1,13 @@
-let AutoBem = require('AutoBem');
+let AutoBem = require('auto-bem');
 
 mask.Module.registerModuleType('style', 'bem', {
 	load_ () {
-		return mask.file.get(this.path).then(style => {
+		return mask.File.get(this.path).then(style => {
 			this.bemCss = new AutoBem.BemCss(style, {
 				filename: this.path
 			});
 
-			if (isNode) {
+			if (mask.is.NODE) {
 				return;
 			}
 
