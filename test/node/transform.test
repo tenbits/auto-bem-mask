@@ -1,14 +1,27 @@
 UTest({
 	'should transform css and mask' () {
-		var css = `
-			.foo { color: red }
-			.foo .item { background: green;}
-		`;
-		var mask = `			
+		let getFile = (path) => {
+			var css = `
+				.foo { color: red }
+				.foo .item { background: green;}
+			`;		
+			return (new mask.class.Deferred).resolve(css);
+		};
+
+		mask.cfg('getFile', getFile);
+		
+		var template = `
+			import foo from 'foo.css' as bem;
+
+			[bem]
 			.foo {
 				ul > li.item > 'Hello'
 			}
 		`;
+
+		return mask.renderAsync(template).then(html => {
+			console.log(html);
+		})
 
 		var { template, css: style } = AutoBem.transform(mask, css, { 
 			scopeId: 'MyID',

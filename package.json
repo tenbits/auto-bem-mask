@@ -20,7 +20,8 @@
     "atma-io": "^0.2.17",
     "atma-loader-babel": "^1.1.29",
     "auto-bem": "^0.1.10",
-    "babel-preset-es2015": "^6.24.0"
+    "babel-preset-es2015": "^6.24.0",
+    "maskjs": "^0.61.12"
   },
   "scripts": {
     "test": "atma test",
