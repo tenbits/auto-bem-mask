@@ -1,0 +1,10 @@
+import from 'Bar.css' as bem;
+
+define Bar {
+
+	[bem]
+	.container {
+		'purple'
+		.item > 'yellow'
+	}
+}

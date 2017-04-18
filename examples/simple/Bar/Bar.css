@@ -1,0 +1,11 @@
+.container {
+	height: 300px;
+	width: 100px;
+	background: purple;
+}
+
+.item {
+	width: 80%;
+	height: 20%;
+	background: yellow;
+}

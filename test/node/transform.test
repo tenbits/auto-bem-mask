@@ -1,5 +1,8 @@
 UTest({
-	'should transform css and mask' () {
+	$teardown () {
+		mask.cfg('getFile', null);
+	},
+	async 'should transform css and mask' () {
 		let getFile = (path) => {
 			var css = `
 				.foo { color: red }
@@ -10,7 +13,7 @@ UTest({
 
 		mask.cfg('getFile', getFile);
 		
-		var template = `
+		let template = `
 			import foo from 'foo.css' as bem;
 
 			[bem]
@@ -19,23 +22,10 @@ UTest({
 			}
 		`;
 
-		return mask.renderAsync(template).then(html => {
-			console.log(html);
-		})
+		let html = await mask.renderAsync(template);
 
-		var { template, css: style } = AutoBem.transform(mask, css, { 
-			scopeId: 'MyID',
-			templateType: 'mask' 
-		});
-		
-		has_(template, '.MyID.foo');
-		has_(template, 'li.MyID__item.item');
-		
-		has_(style, '.MyID {');
-		hasNot_(style, '.foo {');
-
-		has_(style, '.MyID__item');
-		hasNot_(style, '.item');
-		
+		has_(html, /"foo_.{2,4}/);
+		hasNot_(html, "[bem]");
+		has_(html, "as bem (salt='");
 	}
 })

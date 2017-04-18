@@ -1,0 +1,10 @@
+import from 'Foo.css' as bem;
+
+define Foo {
+
+	[bem]
+	.container {
+		'red'
+		.item > 'cyan'
+	}
+}
