@@ -1,0 +1,43 @@
+[bem]
+.container {
+
+	style {
+		:host {
+			height: 100px;
+			width: 200px;
+			background: red;
+		}
+
+		.item {
+			width: 90%;
+			height: 70%;
+			background: cyan;
+		}
+	}
+
+	'red'
+	.item > 'cyan'
+}
+
+
+hr;
+
+[bem]
+.container {
+	style {
+		:host {
+			height: 300px;
+			width: 100px;
+			background: purple;
+		}
+
+		.item {
+			width: 80%;
+			height: 20%;
+			background: yellow;
+		}
+	}
+
+	'purple'
+	.item > 'yellow'
+}
