@@ -1,0 +1,72 @@
+UTest({
+	async 'should test simple style block' () {
+		
+		let doc = await UTest
+			.server
+			.request('/examples/simple/inline.html');
+
+
+		await UTest.domtest(doc, `
+			find('.container') {
+				length 2;
+
+				eq(0) {
+					css ('width', '200px');
+
+					find ('.item') {
+						css ('background-color', 'cyan');
+					}
+				}
+				eq(1) {
+					css ('width', '100px');
+
+					find ('.item') {
+						css ('background-color', 'yellow');
+					}
+				}
+			}
+		`);
+	},
+	async 'should test bem components' () {
+		
+		let doc = await UTest
+			.server
+			.request('/examples/components/index.html');
+
+
+		await UTest.domtest(doc, `
+			find('.container') {
+				length 4;
+
+				eq(0) {
+					css ('width', '200px');
+
+					find ('.item') {
+						css ('background-color', 'cyan');
+					}
+				}				
+				eq(1) {
+					css ('width', '100px');
+
+					find ('.item') {
+						css ('background-color', 'yellow');
+					}
+				}
+				eq(2) {
+					css ('width', '200px');
+
+					find ('.item') {
+						css ('background-color', 'cyan');
+					}
+				}
+				eq(3) {
+					css ('width', '100px');
+
+					find ('.item') {
+						css ('background-color', 'yellow');
+					}
+				}
+			}
+		`);
+	},
+});

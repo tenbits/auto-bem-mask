@@ -15,7 +15,7 @@
   ],
   "main": "lib/autoBem-mask.js",
   "devDependencies": {
-    "app-bundler": "0.0.14",
+    "app-bundler": "0.0.20",
     "atma": ">0.9.26",
     "atma-io": "^0.2.19",
     "atma-loader-babel": "^1.1.29",

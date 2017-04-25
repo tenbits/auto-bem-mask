@@ -1,6 +1,6 @@
 module.exports = {
 	create (decorator, node, ctr) {
-		let result = getBemModule(node, ctr, this.decorator.name);
+		let result = getBemModule(node, ctr, decorator.name);
 		if (result == null) {
 			return null;
 		}
@@ -16,7 +16,7 @@ class BemModuleHandler {
 		this.module = module;
 	}
 	beforeRender (node, model, ctx, el, ctr) {
-		let [ module, importNode ] = this;
+		let { module, importNode } = this;
 		
 		module.bemCss.transformAst(node);
 		if (mask.is.NODE) {
