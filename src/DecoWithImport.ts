@@ -9,7 +9,7 @@ export function create (decorator, node, ctr) {
 	return new BemModuleHandler(decorator, importNode, module);
 }
 
-class BemModuleHandler {
+export class BemModuleHandler {
 	constructor (public decorator, public importNode, public module) {
 		
 	}

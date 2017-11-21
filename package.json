@@ -15,6 +15,7 @@
   ],
   "main": "lib/auto-bem-mask.js",
   "devDependencies": {
+    "@types/node": "^8.0.53",
     "app-bundler": "0.0.38",
     "atma": ">0.9.26",
     "atma-io": "^0.2.19",

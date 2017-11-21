@@ -9,7 +9,7 @@ export function create (decorator, node, ctr) {
 }
 
 
-class StyleNodeHandler {
+export class StyleNodeHandler {
 	constructor (public decoratorNode, public styleNode) {
 		if (styleNode.bemCss == null) {
 			styleNode.bemCss = new AutoBem.BemCss(styleNode.content, {
