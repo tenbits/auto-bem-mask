@@ -1,19 +1,17 @@
-module.exports = {
-	create (decorator, node, ctr) {
-		let result = getBemModule(node, ctr, decorator.name);
-		if (result == null) {
-			return null;
-		}
-		let [ module, importNode ] = result;
-		return new BemModuleHandler(decorator, importNode, module);
+import { mask } from './globals'
+
+export function create (decorator, node, ctr) {
+	let result = getBemModule(node, ctr, decorator.name);
+	if (result == null) {
+		return null;
 	}
-};
+	let [ module, importNode ] = result;
+	return new BemModuleHandler(decorator, importNode, module);
+}
 
 class BemModuleHandler {
-	constructor (decorator, importNode, module) {
-		this.decorator = decorator;
-		this.importNode = importNode;
-		this.module = module;
+	constructor (public decorator, public importNode, public module) {
+		
 	}
 	beforeRender (node, model, ctx, el, ctr) {
 		let { module, importNode } = this;
