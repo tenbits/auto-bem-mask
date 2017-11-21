@@ -27,7 +27,8 @@
     "test": "atma test",
     "build": "app-bundler",
     "watch": "app-bundler --watch",
-    "release": "atma release"
+    "release": "atma release",
+    "server": "atma server"
   },
   "keywords": [],
   "dependencies": {
